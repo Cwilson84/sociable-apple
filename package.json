@@ -2,9 +2,11 @@
   "name": "sociable-apple",
   "version": "1.0.0",
   "description": "Module Eighteen Challenge",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
