@@ -7,7 +7,10 @@ const PORT = process.env.PORT || 3001;
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// routes
 app.use(routes);
+
 
 // mongoose connection
 app.listen(PORT, () => {
