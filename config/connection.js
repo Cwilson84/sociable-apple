@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/sociable-apple";
+  process.env.MONGODB_URI || "PORT 3001";
 
 mongoose.connect(MONGODB_URI);
 
