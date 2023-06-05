@@ -7,6 +7,8 @@ const connectionString =
 connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+}).catch((error) => {
+  console.error('MongoDB connection error:', error);
 });
 
 module.exports = connection;
