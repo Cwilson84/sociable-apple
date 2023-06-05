@@ -23,6 +23,6 @@ const thoughtData = [
   },
 ];
 
-const seedThoughts = () => Thought.bulkCreate(thoughtData);
+const seedThoughts = () => Thought.insertMany(thoughtData);
 
 module.exports = seedThoughts;
