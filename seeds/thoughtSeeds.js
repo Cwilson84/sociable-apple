@@ -2,20 +2,20 @@ const { Thought } = require("../models");
 
 const thoughtData = [
   {
-    thoughtText: ["I love the new season of The Mandalorian!", "I'm so excited to master REACT!"],
+    thoughtText: ["I love the new season of The Mandalorian!"],
     username: "MrWilson30",
-    reactions: [{}],
+    reactions: [],
   },
   {
     thoughtText:[
       "Coding is like eating an elephant. You have to do it one bite at a time."],
     username: "BFinny",
-    reactions: [{}],
+    reactions: [],
   },
   {
     thoughtText: ["Who even sleeps anymore?"],
     username: "JazzyJ",
-    reactions: [{}], 
+    reactions: [], 
   }
 ];
 
