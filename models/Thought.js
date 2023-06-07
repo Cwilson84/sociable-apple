@@ -43,8 +43,6 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      // use getter method to format timestamp
-      get: (createdAtVal) => dateFormat(createdAtVal),
     },
     username: {
       type: String,
