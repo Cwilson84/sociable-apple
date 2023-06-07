@@ -18,14 +18,11 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      // use getter method to format timestamp
-      get: (createdAtVal) => dateFormat(createdAtVal),
     },
   },
   {
     toJSON: {
       virtuals: true,
-      getters: true,
     },
     // prevents virtuals from creating duplicate of _id as `id`
     id: false,
@@ -54,7 +51,6 @@ const thoughtSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
-      getters: true,
     },
     // prevents virtuals from creating duplicate of _id as `id`
     id: false,
