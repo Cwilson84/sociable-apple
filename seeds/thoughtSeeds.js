@@ -16,7 +16,13 @@ const thoughtData = [
     thoughtText: "Who even sleeps anymore?",
     username: "JazzyJ",
     reactions: [], 
-  }
+  },
+  {
+    thoughtText:
+      "I hope I can do this forever.",
+    username: "JayC",
+    reactions: [],
+  },
 ];
 
 const seedThoughts = () => Thought.insertMany(thoughtData);

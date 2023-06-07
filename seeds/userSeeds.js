@@ -19,6 +19,12 @@ const userData = [
     thoughts: [],
     friends: [],
   },
+  {
+    username: "JayC",
+    email: "jcruz@hotmail.com",
+    thoughts: [],
+    friends: [],
+  }
 ];
 
 const seedUsers = () => User.insertMany(userData);
