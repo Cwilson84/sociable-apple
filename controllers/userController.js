@@ -71,34 +71,32 @@ module.exports = {
   },
 
   // POST/add a friend
-  async addFriend(req, res) {
-    try {
-      const user = await User.findOneAndUpdate(
-        { _id: req.params.id },
-        { $addToSet: { friends: req.params.friendId } },
-        { new: true }
-      ).populate("friends");
-
-      if (!user) {
-        return res.status(404).json({ message: "User not found." });
-      }
-      res.json(user);
-    } catch (err) {
-      console.log(err);
-      return res.status(500).json(err);
-    }
+  addFriend(req, res) {
+    User.findOneAndUpdate(
+      { _id: req.params.userId },
+      { $addToSet: { friends: req.params.friendId } },
+      { runValidators: true, new: true }
+    )
+      .then((user) =>
+        !user
+          ? res.status(404).json({ message: `No user found` })
+          : res.json(user)
+      )
+      .catch((err) => res.status(500).json(err));
   },
 
   // DELETE/remove a friend
-  async removeFriend(req, res) {
-    try {
-      const user = await User.findOneAndUpdate(
-        { _id: req.params.id },
-        { $pull: { friends: req.params.friendId } }
-      );
-      res.json(user);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+  removeFriend(req, res) {
+    User.findOneAndUpdate(
+      { _id: req.params.userId },
+      { $pull: { friends: req.params.friendId } },
+      { runValidators: true, new: true }
+    )
+      .then((user) =>
+        !user
+          ? res.status(404).json({ message: `No user found` })
+          : res.json(user)
+      )
+      .catch((err) => res.status(500).json(err));
   },
 };
